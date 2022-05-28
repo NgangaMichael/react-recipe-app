@@ -31,8 +31,7 @@ export default function Popular() {
       console.log(data);
       setPorpular(data.recipes)
     }
-      
-      
+       
     }
   return (
     <div>
@@ -44,7 +43,7 @@ export default function Popular() {
           arrows: false,
           pagination: false,
           drag: 'free',
-          gap: '5rem'
+          gap: '1rem'
           
         }}> 
         {popular.map((recipe) => {
@@ -53,9 +52,9 @@ export default function Popular() {
                   <Card>
                     <p>{recipe.title}</p>
                     <img src={recipe.image} alt={recipe.title}></img>
+                    <Gradient />
                   </Card>
                   {/* this gradient is for shadow on the cards to make the text readble  */}
-                  <Gradient />
               </SplideSlide>
             )
           })}
@@ -67,16 +66,16 @@ export default function Popular() {
 
 // styled components 
 const Wrapper = styled.div`
-  margin: 4rem 0rem;
+  margin: 1rem 0rem;
 `;
 const Card = styled.div`
   min-height: 5rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   overflow: hidden;
   position: relative;
 
   img {
-    border-radius: 2rem;
+    border-radius: 1rem;
     position: absolute;
     left: 0;
     width: 100%;
@@ -94,7 +93,7 @@ const Card = styled.div`
     width: 100%;
     text-align: center;
     font-weight: 600;
-    font-size:1rem;
+    font-size:0.7rem;
     height: 40%;
     display: flex;
     justify-content: center;
@@ -107,5 +106,5 @@ const Gradient = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.7));
 `;
