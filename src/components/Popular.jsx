@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from 'styled-components'; //for styled components
 import { Splide, SplideSlide } from "@splidejs/react-splide"; //for caurosel
 import '@splidejs/splide/dist/css/splide.min.css';  // for splide to work you must import the css 
+import { Link } from "react-router-dom";
 
 
 export default function Popular() {
@@ -50,8 +51,10 @@ export default function Popular() {
             return(
               <SplideSlide key={recipe.id}>
                   <Card>
-                    <p>{recipe.title}</p>
-                    <img src={recipe.image} alt={recipe.title}></img>
+                    <Link to={'/recipe/' + recipe.id}>
+                      <p>{recipe.title}</p>
+                      <img src={recipe.image} alt={recipe.title}></img>
+                    </Link>
                     <Gradient />
                   </Card>
                   {/* this gradient is for shadow on the cards to make the text readble  */}
@@ -93,7 +96,7 @@ const Card = styled.div`
     width: 100%;
     text-align: center;
     font-weight: 600;
-    font-size:0.7rem;
+    font-size:0.5rem;
     height: 40%;
     display: flex;
     justify-content: center;
